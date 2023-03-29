@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="">
+        <script type="text/javascript" src="js/dom.js"></script>
+    </head>
+    <body>
+    
+        <div>
+            <label>Nombres</label>
+            <input type="text" id="nombretxt" placeholder="Ingrese su nombre">
+        </div>
+        <div>
+            <label>Apellidos</label>
+            <input type="text" id="apellidotxt" placeholder="Ingrese su apellido">
+        </div>
+        <div>
+            <label>Numero</label>
+            <input type="number" id="numerotxt" placeholder="Ingrese su numero">
+        </div>
+        <div>
+            <label>Correo</label>
+            <input type="email" id="correotxt" placeholder="Ingrese su correo">
+        </div>
+        <div>
+            <label>Edad</label>
+            <input type="text" id="edadtxt" placeholder="Ingrese su edad">
+        </div>
+        <div>
+            <label>Estatura</label>
+            <input type="text" id="estaturatxt" placeholder="Ingrese su estatura">
+        </div>
+        <div>
+            <label>NIVEL DE ESTUDIO</label>
+            <br>
+            <input type="radio" id="radio1" name="estudios">Sin estudios
+            <br>
+            <input type="radio" name="estudios" id="radio2">Primaria
+            <br>
+            <input type="radio" name="estudios" id="radio3">Secundaria
+            <br>
+            <input type="radio" name="estudios" id="radio4">Universitario
+        </div>
+        <div>
+            <label>Lenguajes de programacion</label>
+            <br>
+            <input type="checkbox" id="checkbox1">Javascript
+            <br>
+            <input type="checkbox" id="checkbox2">Java
+            <br>
+            <input type="checkbox" id="checkbox3">Python
+            <br>
+            <input type="checkbox" id="checkbox4">Html
+
+        </div>
+        <input type="button" id="Enviar" onclick="mostrar()" value="Enviar">
+        <input type="button" value="Calcular" id="calcular" onclick="calcularmayoria()">
+    </form>
+    <script>
+        let Nombre,Apellido,Numero,Correo,Edad,Estatura,Estudios
+        let contador=0
+
+        function mostrar(){
+        let Nombre = document.getElementById('nombretxt').value;
+        let Apellido = document.getElementById('apellidotxt').value;
+        let Edad = document.getElementById('edadtxt').value;
+        let Estatura = document.getElementById('estaturatxt').value;
+        let Numero = document.getElementById('numerotxt').value;
+        let Correo = document.getElementById('correotxt').value;
+
+        alert('Sus datos son: '+Nombre+Apellido+Correo+Numero+Edad+Estatura);
+
+
+        if (document.getElementById('radio1').checked){
+            alert("no tiene estudios gei");
+        }
+        if (document.getElementById('radio2').checked){
+            alert("teni la primaria pndejo");
+        }
+        if (document.getElementById('radio3').checked){
+            alert("teni solo la secundaria medio gei eres");
+        }
+        if (document.getElementById('radio4').checked){
+            alert("Eri de universidad, god pa");
+        }
+
+
+        if (document.getElementById('checkbox1').checked){
+            contador++;
+        }
+        if (document.getElementById('checkbox2').checked){
+            contador++;
+        }
+        if (document.getElementById('checkbox3').checked){
+            contador++;
+        }
+         if (document.getElementById('checkbox4').checked){
+            contador++;
+        }
+        alert("el aprendiz: "+Nombre+" conoce "+contador+" lenguajes de programacion");
+
+
+        
+        }
+
+        function calcularmayoria(){
+
+            Edad = document.getElementById('edadtxt').value
+            if(Edad>=18){
+                alert("es mayor de edad")
+            }else 
+                alert("es menor de edad")
+           
+         }
+        
+    </script>
+    </body>
+</html>
